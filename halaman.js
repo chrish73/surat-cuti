@@ -7,9 +7,10 @@ document.addEventListener('DOMContentLoaded', () => {
         const name = document.getElementById('name').value;
         const id = document.getElementById('id').value;
         const unit = document.getElementById('unit').value;
+        const email = document.getElementById('email').value; // **Tambahan: Ambil nilai email**
 
         // Validasi sederhana
-        if (!name || !id || !unit) {
+        if (!name || !id || !unit || !email) { // **Tambahan: Validasi email**
             alert('Silakan lengkapi semua data.');
             return;
         }
@@ -18,6 +19,7 @@ document.addEventListener('DOMContentLoaded', () => {
         sessionStorage.setItem('employeeName', name);
         sessionStorage.setItem('employeeId', id);
         sessionStorage.setItem('employeeUnit', unit);
+        sessionStorage.setItem('employeeEmail', email); // **Tambahan: Simpan email**
 
         // Arahkan ke halaman utama (index.html)
         window.location.href = 'index.html';
