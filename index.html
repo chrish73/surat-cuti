@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Formulir Permohonan Cuti</title>
+    <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+</head>
+<body>
+    <div class="card-container">
+        <div class="card">
+            <div class="employee-info">
+                <div class="profile-pic">
+                    <i class="fas fa-user"></i>
+                </div>
+                <div class="info-details">
+                    <div class="info-item">
+                        <span class="label">Nama:</span>
+                        <span class="value" id="employee-name"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">ID Karyawan:</span>
+                        <span class="value" id="employee-id"></span>
+                    </div>
+                    <div class="info-item">
+                        <span class="label">Unit:</span>
+                        <span class="value" id="employee-unit"></span>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="form-section">
+                <h2>Permohonan Cuti</h2>
+                <div class="form-row">
+                    <div class="form-group">
+                        <label for="leave-type">Jenis Cuti</label>
+                        <select id="leave-type" class="form-control">
+                            <option>Cuti Tahunan</option>
+                            <option>Cuti Lahiran</option>
+                            <optgroup label="Cuti Alasan Penting">
+                                <option>Menikah</option>
+                                <option>Sakit</option>
+                                <option>Istri Lahiran</option>
+                                <option>Kemalangan</option>
+                                <option>Ibadah</option>
+                            </optgroup>
+                        </select>
+                        <div id="annual-leave-note" class="note-red hidden">
+                         * Cuti direncanakan minimal 1 Bulan
+                        </div>
+                    </div>
+                    <div class="form-group">
+                        <label for="start-date">Tanggal Mulai</label>
+                        <input type="date" id="start-date" class="form-control">
+                    </div>
+                    <div class="form-group">
+                        <label for="end-date">Tanggal Selesai</label>
+                        <input type="date" id="end-date" class="form-control">
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="reason">Alasan Cuti</label>
+                    <textarea id="reason" rows="4" class="form-control"></textarea>
+                </div>
+                <button type="submit" class="submit-btn">Ajukan Permohonan</button>
+            </div>
+            
+            <div id="popup-success" class="popup-modal">
+             <div class="popup-content">
+              <div class="icon-container">
+            <i class="fas fa-check-circle check-icon"></i>
+              </div>
+           <h3>Permohonan Sedang Diproses!</h3>
+            <p>Mohon tunggu persetujuan dari atasan Anda.</p>
+              </div>
+            </div>
+            
+            <div class="history-section">
+                <h2>Riwayat Cuti</h2>
+                <table class="history-table">
+                    <thead>
+                        <tr>
+                            <th>Jenis Cuti</th>
+                            <th>Tanggal Mulai</th>
+                            <th>Tanggal Selesai</th>
+                            <th>Status</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Cuti Tahunan</td>
+                            <td>2023-10-25</td>
+                            <td>2023-10-28</td>
+                            <td><span class="status approved">Disetujui</span></td>
+                        </tr>
+                        <tr>
+                            <td>Cuti Sakit</td>
+                            <td>2023-11-15</td>
+                            <td>2023-11-16</td>
+                            <td><span class="status pending">Menunggu</span></td>
+                        </tr>
+                        <tr>
+                            <td>Cuti Tahunan</td>
+                            <td>2023-12-10</td>
+                            <td>2023-12-15</td>
+                            <td><span class="status rejected">Ditolak</span></td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
